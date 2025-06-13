@@ -17,7 +17,9 @@
     }
     header {
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
+      justify-content: space-between;
       background: #ffe082;
       color: #1e1e1e;
       padding: 20px;
@@ -33,8 +35,9 @@
       background: #fff;
       box-shadow: 3px 3px 0 #ffca28;
     }
-    header div {
+    .header-text {
       flex: 1;
+      min-width: 200px;
     }
     header h1 {
       font-size: 2.5em;
@@ -45,6 +48,15 @@
     header p {
       font-size: 1.2em;
       margin: 5px 0 0;
+    }
+    .contact-info {
+      font-size: 0.95em;
+      text-align: right;
+    }
+    .contact-info a {
+      color: #d84315;
+      text-decoration: none;
+      font-weight: bold;
     }
     section {
       position: relative;
@@ -79,25 +91,7 @@
       border-bottom: 3px dashed #ffca28;
       padding-bottom: 5px;
       font-size: 1.8em;
-      position: relative;
     }
-    h2::before {
-      content: attr(data-sound);
-      position: absolute;
-      left: -80px;
-      top: -30px;
-      background: #f44336;
-      color: white;
-      font-size: 1em;
-      padding: 3px 10px;
-      border-radius: 10px;
-      transform: rotate(-15deg);
-      box-shadow: 3px 3px 0 #b71c1c;
-    }
-    section:nth-of-type(1) h2::before { content: "WHOOSH!"; }
-    section:nth-of-type(2) h2::before { content: "ZAP!"; }
-    section:nth-of-type(3) h2::before { content: "BOOM!"; }
-
     ul {
       padding-left: 25px;
     }
@@ -126,9 +120,13 @@
 <body>
   <header>
     <img src="logo.png" alt="Super Bob Home Inspection Logo">
-    <div>
+    <div class="header-text">
       <h1>Super Bob Home Inspection</h1>
       <p>Serving all of Maryland</p>
+    </div>
+    <div class="contact-info">
+      <p><strong>Phone:</strong> 202-304-9328<br>
+      <strong>Email:</strong> <a href="mailto:superbobhomeinspection@gmail.com">superbobhomeinspection@gmail.com</a></p>
     </div>
   </header>
 
@@ -145,12 +143,6 @@
       <li>Seller Pre-Listing Inspections</li>
       <li>Detached Garage & Outbuilding Inspections</li>
     </ul>
-  </section>
-
-  <section>
-    <h2>Contact</h2>
-    <p><strong>Phone:</strong> 202-304-9328</p>
-    <p><strong>Email:</strong> <a href="mailto:superbobhomeinspection@gmail.com">superbobhomeinspection@gmail.com</a></p>
   </section>
 
   <footer>
