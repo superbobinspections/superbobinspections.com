@@ -12,39 +12,60 @@
       margin: 0;
       padding: 0;
       line-height: 1.6;
-      background: url('logo.png') repeat;
-      background-size: 200px;
+      background-color: #fff8dc;
       color: #333;
     }
     header {
-      background: rgba(255, 236, 179, 0.9);
+      display: flex;
+      align-items: center;
+      background: #ffe082;
       color: #1e1e1e;
-      padding: 30px 20px;
-      text-align: center;
+      padding: 20px;
       border-bottom: 5px solid #ffa000;
       box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     }
     header img {
-      width: 140px;
+      width: 120px;
       height: auto;
-      margin-bottom: 10px;
+      margin-right: 20px;
+      border: 3px solid #ff6f00;
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: 3px 3px 0 #ffca28;
+    }
+    header div {
+      flex: 1;
+    }
+    header h1 {
+      font-size: 2.5em;
+      margin: 0;
+      color: #ff5722;
+      text-shadow: 1px 1px #fff;
+    }
+    header p {
+      font-size: 1.2em;
+      margin: 5px 0 0;
     }
     section {
       padding: 25px;
       max-width: 800px;
       margin: 30px auto;
-      background: rgba(255, 251, 230, 0.95);
-      border: 4px dashed #ffa000;
+      background: #fffde7;
+      border: 4px dotted #ffa000;
       border-radius: 16px;
-      box-shadow: 4px 4px 0px #ffcc80;
+      box-shadow: 6px 6px 0px #ffcc80;
     }
     h2 {
       color: #ff6f00;
-      border-bottom: 2px solid #ffca28;
+      border-bottom: 3px dashed #ffca28;
       padding-bottom: 5px;
     }
     ul {
       padding-left: 25px;
+    }
+    li::before {
+      content: '\1F4CD';
+      margin-right: 8px;
     }
     a {
       color: #d84315;
@@ -57,7 +78,7 @@
     footer {
       text-align: center;
       padding: 15px;
-      background: rgba(255, 224, 130, 0.95);
+      background: #ffe082;
       color: #4e342e;
       font-size: 0.95em;
       border-top: 4px solid #ffb300;
@@ -67,8 +88,10 @@
 <body>
   <header>
     <img src="logo.png" alt="Super Bob Home Inspection Logo">
-    <h1>Super Bob Home Inspection</h1>
-    <p>Serving all of Maryland</p>
+    <div>
+      <h1>Super Bob Home Inspection</h1>
+      <p>Serving all of Maryland</p>
+    </div>
   </header>
 
   <section>
