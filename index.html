@@ -3,16 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Super Bob Home Inspection</title>
+  <title>Super Bob Home Inspection - Professional Home Inspections in Maryland</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap');
+    /* Using a more professional, clean-looking font from Google Fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
 
     body {
-      font-family: 'Comic Neue', cursive;
+      /* Switched to a more modern, readable, and professional sans-serif font */
+      font-family: 'Lato', sans-serif;
       margin: 0;
       padding: 0;
       line-height: 1.6;
-      background-color: #fff8dc;
+      /* A more neutral and professional background color */
+      background-color: #f4f7f6;
       color: #333;
     }
     header {
@@ -20,100 +23,117 @@
       flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
-      background: #ffe082;
+      /* A clean white background for the header */
+      background: #ffffff;
       color: #1e1e1e;
-      padding: 20px;
-      border-bottom: 5px solid #ffa000;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      padding: 20px 40px; /* Added more horizontal padding */
+      border-bottom: 1px solid #e0e0e0; /* A subtle border is more professional */
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* A softer, more modern shadow */
     }
     header img {
-      width: 120px;
+      width: 100px; /* Slightly smaller for a sleeker look */
       height: auto;
       margin-right: 20px;
-      border: 3px solid #ff6f00;
-      border-radius: 8px;
-      background: #fff;
-      box-shadow: 3px 3px 0 #ffca28;
+      /* Removed the stylized border for a cleaner appearance */
     }
     .header-text {
       flex: 1;
       min-width: 200px;
     }
     header h1 {
-      font-size: 2.5em;
+      font-size: 2em; /* Slightly reduced size for better balance */
       margin: 0;
-      color: #ff5722;
-      text-shadow: 1px 1px #fff;
+      /* A strong, professional blue color */
+      color: #005A9C;
+      text-shadow: none; /* Removed text shadow for a flat, modern design */
     }
     header p {
-      font-size: 1.2em;
+      font-size: 1.1em;
       margin: 5px 0 0;
+      color: #555; /* A softer color for the subtitle */
     }
     .contact-info {
-      font-size: 0.95em;
+      font-size: 1em;
       text-align: right;
     }
     .contact-info a {
-      color: #d84315;
+      color: #005A9C; /* Using the new primary color */
       text-decoration: none;
       font-weight: bold;
     }
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+
+    /* A container to keep the content centered and organized */
+    .container {
+      padding: 0 20px;
+    }
+
     section {
-      position: relative;
-      padding: 25px;
+      padding: 30px;
       max-width: 800px;
-      margin: 50px auto;
-      background: #fffde7;
-      border: 6px solid #ffa000;
-      border-radius: 30px;
-      box-shadow: 6px 6px 0px #ffcc80;
-      clip-path: polygon(10% 0%, 90% 0%, 100% 20%, 100% 80%, 90% 100%, 10% 100%, 0% 80%, 0% 20%);
-      transition: transform 0.2s ease;
+      margin: 40px auto;
+      /* A clean white background for content sections */
+      background: #ffffff;
+      /* A standard, subtle border */
+      border: 1px solid #e0e0e0;
+      border-radius: 8px; /* Softly rounded corners are modern and professional */
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05); /* A subtle shadow for depth */
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
     }
     section:hover {
-      transform: scale(1.01);
-    }
-    section::after {
-      content: "";
-      position: absolute;
-      bottom: -30px;
-      left: 80px;
-      width: 0;
-      height: 0;
-      border: 20px solid transparent;
-      border-top-color: #ffa000;
-      border-bottom: 0;
-      border-right: 0;
-      margin-left: -10px;
+      transform: translateY(-5px); /* A subtle lift effect on hover */
+      box-shadow: 0 6px 12px rgba(0,0,0,0.08);
     }
     h2 {
-      color: #ff6f00;
-      border-bottom: 3px dashed #ffca28;
-      padding-bottom: 5px;
-      font-size: 1.8em;
+      /* Using the primary blue color for headings */
+      color: #005A9C;
+      /* A clean, solid border bottom */
+      border-bottom: 2px solid #e0e0e0;
+      padding-bottom: 10px;
+      font-size: 1.6em;
+      margin-top: 0; /* Remove default margin */
     }
     ul {
-      padding-left: 25px;
+      padding-left: 20px;
+      list-style-type: none; /* Remove default bullets to use custom ones */
     }
-    li::before {
-      content: '\1F4CD';
-      margin-right: 8px;
+    ul li {
+      padding-left: 20px;
+      position: relative;
+      margin-bottom: 10px; /* Space out the list items */
     }
-    a {
-      color: #d84315;
-      text-decoration: none;
+    /* A more professional checkmark icon for list items */
+    ul li::before {
+      content: '\2713'; /* A checkmark character */
+      position: absolute;
+      left: 0;
+      color: #28a745; /* A trustworthy green for the checkmark */
       font-weight: bold;
     }
-    a:hover {
-      text-decoration: underline;
+    a.cta-button {
+      display: inline-block;
+      background-color: #005A9C;
+      color: #ffffff;
+      padding: 12px 25px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 20px;
+      transition: background-color 0.3s ease;
+    }
+    a.cta-button:hover {
+      background-color: #004170;
+      text-decoration: none;
     }
     footer {
       text-align: center;
-      padding: 15px;
-      background: #ffe082;
-      color: #4e342e;
-      font-size: 0.95em;
-      border-top: 4px solid #ffb300;
+      padding: 20px;
+      background: #333; /* A dark footer provides good contrast */
+      color: #f4f7f6;
+      font-size: 0.9em;
+      margin-top: 50px; /* Add space above the footer */
     }
   </style>
 </head>
@@ -122,7 +142,7 @@
     <img src="logo.png" alt="Super Bob Home Inspection Logo">
     <div class="header-text">
       <h1>Super Bob Home Inspection</h1>
-      <p>Serving all of Maryland</p>
+      <p>Your Trusted Partner in Maryland Home Inspections</p>
     </div>
     <div class="contact-info">
       <p><strong>Phone:</strong> 202-304-9328<br>
@@ -130,23 +150,26 @@
     </div>
   </header>
 
-  <section>
-    <h2>About</h2>
-    <p>Super Bob Home Inspection is dedicated to delivering thorough, honest, and timely inspections to help homebuyers make confident decisions. I inspect every property as if my own family were moving in.</p>
-  </section>
+  <div class="container">
+    <section>
+      <h2>About Super Bob</h2>
+      <p>Super Bob Home Inspection is dedicated to delivering thorough, honest, and timely inspections to help homebuyers make confident decisions. I inspect every property as if my own family were moving in, ensuring you have the peace of mind you deserve.</p>
+      <a href="mailto:superbobhomeinspection@gmail.com" class="cta-button">Request an Inspection</a>
+    </section>
 
-  <section>
-    <h2>Services</h2>
-    <ul>
-      <li>Buyer Home Inspections</li>
-      <li>Walk and Talk (Consulting during Open House)</li>
-      <li>Seller Pre-Listing Inspections</li>
-      <li>Detached Garage & Outbuilding Inspections</li>
-    </ul>
-  </section>
+    <section>
+      <h2>Our Services</h2>
+      <ul>
+        <li>Comprehensive Buyer Home Inspections</li>
+        <li>Walk and Talk Consultations (During Open Houses)</li>
+        <li>Proactive Seller Pre-Listing Inspections</li>
+        <li>Detached Garage & Outbuilding Inspections</li>
+      </ul>
+    </section>
+  </div>
 
   <footer>
-    <p>&copy; 2025 Super Bob Home Inspection</p>
+    <p>&copy; 2025 Super Bob Home Inspection. All Rights Reserved.</p>
   </footer>
 </body>
 </html>
