@@ -80,12 +80,8 @@
       border: 1px solid #e0e0e0;
       border-radius: 8px; /* Softly rounded corners are modern and professional */
       box-shadow: 0 4px 6px rgba(0,0,0,0.05); /* A subtle shadow for depth */
-      transition: box-shadow 0.3s ease, transform 0.3s ease;
     }
-    section:hover {
-      transform: translateY(-5px); /* A subtle lift effect on hover */
-      box-shadow: 0 6px 12px rgba(0,0,0,0.08);
-    }
+
     h2 {
       /* Using the primary blue color for headings */
       color: #005A9C;
@@ -112,7 +108,35 @@
       color: #28a745; /* A trustworthy green for the checkmark */
       font-weight: bold;
     }
-    a.cta-button {
+    
+    /* Form Styles */
+    .form-group {
+        margin-bottom: 20px;
+    }
+    .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: #333;
+    }
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box; /* Ensures padding doesn't affect width */
+        font-family: 'Lato', sans-serif;
+        font-size: 1em;
+    }
+     .form-group input:focus,
+    .form-group textarea:focus {
+        border-color: #005A9C;
+        outline: none;
+        box-shadow: 0 0 5px rgba(0, 90, 156, 0.3);
+    }
+
+    .cta-button {
       display: inline-block;
       background-color: #005A9C;
       color: #ffffff;
@@ -120,10 +144,14 @@
       border-radius: 5px;
       text-decoration: none;
       font-weight: bold;
-      margin-top: 20px;
+      margin-top: 10px;
       transition: background-color 0.3s ease;
+      border: none;
+      cursor: pointer;
+      width: 100%; /* Make button full width */
+      font-size: 1.1em;
     }
-    a.cta-button:hover {
+    .cta-button:hover {
       background-color: #004170;
       text-decoration: none;
     }
@@ -151,10 +179,39 @@
   </header>
 
   <div class="container">
+    <section id="contact">
+      <h2>Contact for Inspection</h2>
+      <p>Fill out the form below to request an inspection. I'll get back to you as soon as possible to confirm.</p>
+      
+      <!-- The form for inspection requests -->
+      <form id="inspection-form">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="e.g., John Doe" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="e.g., john.doe@example.com" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="e.g., (555) 123-4567" required>
+        </div>
+        <div class="form-group">
+          <label for="address">Property Address for Inspection</label>
+          <input type="text" id="address" name="address" placeholder="123 Main St, Anytown, MD" required>
+        </div>
+        <div class="form-group">
+          <label for="dates">Preferred Inspection Date(s)</label>
+          <input type="text" id="dates" name="dates" placeholder="e.g., July 25th, or week of August 5th" required>
+        </div>
+        <button type="submit" class="cta-button">Submit Request</button>
+      </form>
+    </section>
+    
     <section>
       <h2>About Super Bob</h2>
       <p>Super Bob Home Inspection is dedicated to delivering thorough, honest, and timely inspections to help homebuyers make confident decisions. I inspect every property as if my own family were moving in, ensuring you have the peace of mind you deserve.</p>
-      <a href="mailto:superbobinspections@gmail.com" class="cta-button">Request an Inspection</a>
     </section>
 
     <section>
@@ -171,5 +228,45 @@
   <footer>
     <p>&copy; 2025 Super Bob Home Inspection. All Rights Reserved.</p>
   </footer>
+
+  <script>
+    // This script handles the form submission.
+    // It gathers the form data and opens the user's default email client
+    // with a pre-filled email to send to you.
+    document.getElementById('inspection-form').addEventListener('submit', function(event) {
+      // Prevent the form from submitting the traditional way
+      event.preventDefault();
+
+      // Get the data from the form fields
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+      const address = document.getElementById('address').value;
+      const dates = document.getElementById('dates').value;
+
+      // Create the email subject and body
+      const subject = `Inspection Request from ${name} - ${address}`;
+      const body = `
+        A new inspection request has been submitted from the website.
+
+        Client Details:
+        -------------------------
+        Name: ${name}
+        Email: ${email}
+        Phone: ${phone}
+
+        Property Details:
+        -------------------------
+        Address: ${address}
+        Preferred Date(s): ${dates}
+      `;
+
+      // Construct the mailto link with encoded components to handle special characters
+      const mailtoLink = `mailto:superbobinspections@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+      // Open the email client
+      window.location.href = mailtoLink;
+    });
+  </script>
 </body>
 </html>
