@@ -91,24 +91,23 @@
       font-size: 1.6em;
       margin-top: 0; /* Remove default margin */
     }
-    ul {
-      padding-left: 20px;
-      list-style-type: none; /* Remove default bullets to use custom ones */
-    }
-    ul li {
-      padding-left: 20px;
-      position: relative;
-      margin-bottom: 10px; /* Space out the list items */
-    }
-    /* A more professional checkmark icon for list items */
-    ul li::before {
-      content: '\2713'; /* A checkmark character */
-      position: absolute;
-      left: 0;
-      color: #28a745; /* A trustworthy green for the checkmark */
-      font-weight: bold;
-    }
     
+    /* Styling for the new services section */
+    .service-item {
+        margin-bottom: 25px;
+    }
+    .service-item h3 {
+        font-size: 1.2em;
+        color: #333;
+        margin-bottom: 5px;
+        font-weight: 700; /* Bolder font for the service title */
+    }
+    .service-item p {
+        margin-top: 0;
+        padding-left: 15px;
+        border-left: 3px solid #005A9C; /* A nice visual accent */
+    }
+
     /* Form Styles */
     .form-group {
         margin-bottom: 20px;
@@ -167,7 +166,7 @@
 </head>
 <body>
   <header>
-    <img src="logo.png" alt="Super Bob Home Inspection Logo">
+    <img src="logo.png" alt="Super Bob Home Inspection Logo" onerror="this.style.display='none'">
     <div class="header-text">
       <h1>Super Bob Inspections</h1>
       <p>Your Trusted Partner in Maryland Home Inspections</p>
@@ -216,12 +215,26 @@
 
     <section>
       <h2>Our Services</h2>
-      <ul>
-        <li>Comprehensive Buyer Home Inspections</li>
-        <li>Walk and Talk Consultations (During Open Houses)</li>
-        <li>Proactive Seller Pre-Listing Inspections</li>
-        <li>Detached Garage & Outbuilding Inspections</li>
-      </ul>
+      <div class="service-item">
+        <h3>Comprehensive Buyer Home Inspections</h3>
+        <p>My detailed, top-to-bottom inspection provides a complete overview of your potential new home's condition. I examine everything from the foundation to the roof, giving you the crucial information and confidence needed to make a sound investment.</p>
+      </div>
+      <div class="service-item">
+        <h3>Walk and Talk Consultations</h3>
+        <p>Perfect for either experienced or first-time buyers and investors who want to evaluate the house before committing. We'll walk through the property together, and I'll provide on-the-spot verbal assessments of major systems and visible concerns, empowering you to make fast, informed decisions.</p>
+      </div>
+      <div class="service-item">
+        <h3>Proactive Seller Pre-Listing Inspections</h3>
+        <p>Identify and address potential issues before you list your home. A pre-listing inspection can help you streamline the selling process, justify your asking price, and avoid last-minute surprises or negotiations.</p>
+      </div>
+      <div class="service-item">
+        <h3>Radon Testing</h3>
+        <p>Protect your family from this invisible health hazard. I offer professional radon testing using continuous monitoring equipment to accurately measure levels in the home, providing you with peace of mind and clear next steps if mitigation is needed.</p>
+      </div>
+      <div class="service-item">
+        <h3>Detached Garage & Outbuilding Inspections</h3>
+        <p>Don't overlook the other structures on your property. I provide thorough inspections for detached garages, sheds, workshops, and other outbuildings to ensure they are safe, sound, and properly constructed.</p>
+      </div>
     </section>
   </div>
 
