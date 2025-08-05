@@ -111,19 +111,26 @@
     /* Styles for the image gallery in the About section */
     .about-gallery {
         display: flex;
-        gap: 15px; /* Adds space between the images */
+        flex-direction: column; /* Stack the rows vertically */
+        gap: 15px; /* Adds space between the rows */
         margin-top: 20px;
-        flex-wrap: wrap; /* Allows images to wrap on smaller screens */
+    }
+    .gallery-row {
+        display: flex;
         justify-content: center;
+        gap: 15px;
     }
     .about-gallery img {
-        width: 100%; /* Full width on small screens */
-        max-width: 31%; /* Three images per row on larger screens */
         height: auto;
-        flex-grow: 1; /* Allows images to grow and fill space */
         border-radius: 8px;
         box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        object-fit: cover; /* Ensures images look good even if not perfectly sized */
+    }
+    .comic-image {
+        width: 48%; /* Each comic takes up nearly half the space */
+    }
+    .drawing-image {
+        width: 35%; /* The single drawing is smaller */
+        margin-top: 15px; /* Add some space above the single drawing */
     }
 
 
@@ -233,9 +240,13 @@
       
       <!-- Image gallery added below the paragraph -->
       <div class="about-gallery">
-        <img src="super-bob-comic-1.jpg" alt="A hand-drawn comic of Super Bob's adventures part 1">
-        <img src="super-bob-comic-2.jpg" alt="A hand-drawn comic of Super Bob's adventures part 2">
-        <img src="super-bob-drawing.jpg" alt="A colorful drawing of Super Bob saving a muffin">
+        <div class="gallery-row">
+            <img src="super-bob-comic-1.jpg" alt="A hand-drawn comic of Super Bob's adventures part 1" class="comic-image">
+            <img src="super-bob-comic-2.jpg" alt="A hand-drawn comic of Super Bob's adventures part 2" class="comic-image">
+        </div>
+        <div class="gallery-row">
+            <img src="super-bob-drawing.jpg" alt="A colorful drawing of Super Bob saving a muffin" class="drawing-image">
+        </div>
       </div>
     </section>
 
