@@ -108,15 +108,24 @@
         border-left: 3px solid #005A9C; /* A nice visual accent */
     }
 
-    /* Style for the image in the About section */
-    .about-image {
-        max-width: 50%; /* Reduced size to make it smaller */
-        height: auto;
-        display: block; /* To allow for centering */
-        margin: 20px auto 0; /* Adds space above and centers the image */
-        border-radius: 8px; /* Matches the section's rounded corners */
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    /* Styles for the image gallery in the About section */
+    .about-gallery {
+        display: flex;
+        gap: 15px; /* Adds space between the images */
+        margin-top: 20px;
+        flex-wrap: wrap; /* Allows images to wrap on smaller screens */
+        justify-content: center;
     }
+    .about-gallery img {
+        width: 100%; /* Full width on small screens */
+        max-width: 31%; /* Three images per row on larger screens */
+        height: auto;
+        flex-grow: 1; /* Allows images to grow and fill space */
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        object-fit: cover; /* Ensures images look good even if not perfectly sized */
+    }
+
 
     /* Form Styles */
     .form-group {
@@ -221,8 +230,13 @@
     <section>
       <h2>About Super Bob</h2>
       <p>Super Bob Inspections is dedicated to delivering thorough, honest, and timely inspections to help homebuyers make confident decisions. I inspect every property as if my own family were moving in, ensuring you have the peace of mind you deserve.</p>
-      <!-- Image added below the paragraph -->
-      <img src="super-bob-drawing.jpg" alt="A colorful drawing of Super Bob saving a muffin" class="about-image">
+      
+      <!-- Image gallery added below the paragraph -->
+      <div class="about-gallery">
+        <img src="super-bob-comic-1.jpg" alt="A hand-drawn comic of Super Bob's adventures part 1">
+        <img src="super-bob-comic-2.jpg" alt="A hand-drawn comic of Super Bob's adventures part 2">
+        <img src="super-bob-drawing.jpg" alt="A colorful drawing of Super Bob saving a muffin">
+      </div>
     </section>
 
     <section>
